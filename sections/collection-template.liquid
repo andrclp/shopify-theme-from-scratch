@@ -1,7 +1,8 @@
 {% paginate collection.products by section.settings.pagination %}
-    <h1>{{ collection.title }}</h1>
+		<h1>{{ collection.title }}</h1>
+		
     {% for product in collection.products %}
-			{% render 'product-item' %}
+			{% render 'product-item' product: product %}
     {% else %}
         <p>no matches</p>
     {% endfor %}
