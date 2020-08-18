@@ -2,6 +2,7 @@
 	<a href="{{ product.url | within: collection }}">{{ product.title }}</a>
 
 	<span>{{ product.price | money }}</span>
+	
 	{% if product.available == false %}
 			<br>
 					<strong>out of stock</strong>
@@ -11,5 +12,4 @@
 	<a href="{{ product.url | within: collection }}">
 			<img src="{{ product.featured_image.src | img_url: '200x' }}" alt="{{ product.featured_image.alt | escape }}" />
 	</a>
-	
 </div>
