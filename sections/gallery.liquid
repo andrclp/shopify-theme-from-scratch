@@ -1,7 +1,7 @@
 <div class="gallery">
 	{% for block in section.blocks %}
 		<div class="image-wrap" style="
-			background-image: url(' {{ block.settings.image | img_url: '500x' }} ');" >
+			background-image: url(' {{ block.settings.image | img_url: '750x' }} ');" >
 			
 		</div>
 	{% endfor %}
@@ -34,6 +34,15 @@
 				}
 			],
 			"default":   "32.5%"
+		},
+		{
+			"type":   "range",
+			"id":     "image_height",
+			"min":       250,
+			"max":       750,
+			"step":      10,
+			"label":     "Image height",
+			"default":   500
 		}
 	],
 	"blocks": [
@@ -62,7 +71,7 @@
 	.image-wrap {
 		display: inline-block;
 		width: {{ section.settings.per_row }};
-		height: 500px; 
+		height: {{ section.settings.image_height }}px; 
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
