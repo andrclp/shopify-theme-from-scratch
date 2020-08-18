@@ -1,0 +1,37 @@
+<div class="gallery">
+	{% for block in section.blocks %}
+		{{ block.settings.image | img_url: '200x' | img_tag }}
+	{% endfor %}
+</div>
+
+{% schema %}
+{
+	"name": "Gallery",
+	"settings": [],
+	"blocks": [
+		{
+			"type": "image",
+			"name": "Image Block",
+			"settings": [
+				{
+					"type": "image_picker",
+					"id": "image",
+					"label": "Pick image"
+				}
+			]
+		}
+	],
+	"presets": [
+		{
+			"category": "Custom Content",
+			"name": "Image gallery"
+		}
+	]
+}
+{% endschema %}
+
+{% stylesheet 'scss' %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
