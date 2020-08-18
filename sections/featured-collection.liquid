@@ -1,4 +1,5 @@
-{% assign featured_collection = collections['featured-collection'] %}
+<!-- {% assign featured_collection = collections['featured-collection'] %} -->
+{% assign featured_collection = collections[section.settings.featured_collection_picker] %}
 
 {% for product in featured_collection.products %}
 	{% render 'product-item' product: product %}
@@ -10,7 +11,13 @@
 {% schema %}
 	{
 		"name": "Collection",
-		"settings": [],
+		"settings": [
+			{
+				"type":      "collection",
+				"id":        "featured_collection_picker",
+				"label":     "Select collection"
+			}
+		],
 		"presets": [
 			{
 				"category": "Custom Content",
