@@ -11,3 +11,18 @@
 <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
 
 <span>{{ product.price | money }}</span>
+
+<form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
+  {{ current_variant.price | money }}
+  <label for="Quantity">quantity</label>
+	<input type="number" id="Quantity" name="quantity" value="1" min="1">
+	
+	<input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+	<input 
+		type="submit" 
+		value="{% if product.variants.first.available%}Add to Cart{% else %}Sold Out{% endif%}"
+		{% unless product.variants.first.available %}disabled{% endunless %} 
+		id="AddToCart"
+		class="btn btn-primary" 
+	/>
+</form>
