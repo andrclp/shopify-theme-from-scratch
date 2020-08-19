@@ -15,4 +15,13 @@ $(document).ready(function() {
 	}
 	// END CART ITEM COUNTER
 
+
+
+	// jQuery.post('/cart/update.js', {
+	// 	updates: {
+	// 		794864053: 2,
+	// 		794864233: 3
+	// 	}
+	// });
+
 })
