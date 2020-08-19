@@ -1,7 +1,93 @@
 {
-  "current": "Default",
+  "current": {
+    "links-color": "#b12222",
+    "checkout_header_image": "",
+    "checkout_logo_image": "",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#197bbd",
+    "checkout_button_color": "#197bbd",
+    "checkout_error_color": "#e32c2b",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {}
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {}
+      },
+      "gallery": {
+        "type": "gallery",
+        "blocks": {
+          "1597763786859": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/iphone-detects-qr-code.jpg"
+            }
+          },
+          "1597764041424": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/childs-shoes-and-socks.jpg"
+            }
+          },
+          "1597764114930": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/woman-relaxed-work.jpg"
+            }
+          },
+          "1597764132051": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/mens-watch-and-ring.jpg"
+            }
+          },
+          "1597765968435": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/childs-shoes-and-socks.jpg"
+            }
+          },
+          "1597766790734": {
+            "type": "video",
+            "settings": {
+              "video_url": ""
+            }
+          },
+          "1597768999346": {
+            "type": "video",
+            "settings": {
+              "video_url": "https:\/\/vimeo.com\/279117234"
+            }
+          }
+        },
+        "block_order": [
+          "1597763786859",
+          "1597764041424",
+          "1597764114930",
+          "1597768999346",
+          "1597764132051",
+          "1597765968435",
+          "1597766790734"
+        ],
+        "settings": {
+          "per_row": "49.5%",
+          "image_height": 470
+        }
+      }
+    },
+    "content_for_index": []
+  },
   "presets": {
-    "Default": {
-    }
+    "Default": {}
   }
 }
