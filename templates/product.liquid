@@ -30,7 +30,7 @@
 	<input type="hidden" name="id" value="{{ product.variants.first.id }}" />
 	<input 
 		type="submit" 
-		value="{% if product.variants.first.available%}Buy now{% else %}Sold Out{% endif%}"
+		value="{% if product.variants.first.available%}Add to Cart{% else %}Sold Out{% endif%}"
 		{% unless product.variants.first.available %}disabled{% endunless %} 
 		id="AddToCart"
 		class="btn btn-primary" 
