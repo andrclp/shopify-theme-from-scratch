@@ -2,9 +2,9 @@
 		<h1>{{ collection.title }}</h1>
 		
 		<div class="container">
-			<div class="row">
+			<div class="grid-collection">
 				{% for product in collection.products %}
-				<div class="col-md-2 col-3">
+				<div class="grid-product">
 					{% render 'product-item' product: product %}
 				</div>
 				{% else %}

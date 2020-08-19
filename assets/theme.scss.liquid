@@ -1,9 +1,36 @@
-// put your styles here
-
+// GLOBAL STYLES FROM THEME CUSTOMIZER
 a {
 	color: {{ settings.links-color }};
 }
 
+// VARIABLES
+$border-color: #f3f3f3;
 
 // CUSTOM CSS FILE
 // @import 'custom.scss.css'
+
+
+
+// GRID COLLECTION
+.grid-collection {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 12px;
+  margin: 1em;
+  background-color: white;
+}
+
+.grid-product {
+  display: grid;
+	justify-content: center;
+	text-align: center;
+	position: relative;
+  padding: 8px;
+	line-height: 1;
+	border: 1px solid $border-color;
+  border-radius: 5px;
+}
+
+.badge--out-of-stock {
+	position: absolute;
+}
