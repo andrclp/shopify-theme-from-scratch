@@ -23,7 +23,19 @@
   </select>
   {{ current_variant.price | money }}
   <label for="Quantity">quantity</label>
-  <input type="number" id="Quantity" name="quantity" value="1" min="1">
-  <button type="submit" name="add" id="AddToCart">Add to cart</button>
+	<input type="number" id="Quantity" name="quantity" value="1" min="1">
+	
+	<!-- <button type="submit" name="add" id="AddToCart" class="btn">Add to cart</button> -->
+
+	<input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+	<input 
+		type="submit" 
+		value="{% if product.variants.first.available%}Buy now{% else %}Sold Out{% endif%}"
+		{% unless product.variants.first.available %}disabled{% endunless %} 
+		id="AddToCart"
+		class="btn btn-primary" 
+	/>
+
+	
 </form>
 <div>{{ product.description }}</div>
