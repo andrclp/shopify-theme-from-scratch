@@ -1,15 +1,22 @@
+// ***
 // GLOBAL STYLES FROM THEME CUSTOMIZER
-a {
-	color: {{ settings.links-color }};
-}
+// ***
 
 // VARIABLES
+$link-color: {{ settings.links-color }};
 $border-color: {{ settings.border-color }};
+$website-width: {{ settings.website-width }}px;
 
 // CUSTOM CSS FILE
 // @import 'custom.scss.css'
 
-
+.page-width {
+	max-width: $website-width;
+	margin: 0 auto;
+}
+a {
+	color: $link-color;
+}
 
 // GRID COLLECTION
 .grid-collection {
@@ -31,6 +38,8 @@ $border-color: {{ settings.border-color }};
   border-radius: 5px;
 }
 
+
+// badges
 .badge--out-of-stock {
 	position: absolute;
 }

@@ -1,24 +1,22 @@
-{% paginate collection.products by section.settings.pagination %}
-		<h1>{{ collection.title }}</h1>
-		
-		<div class="container">
-			<div class="grid-collection">
-				{% for product in collection.products %}
-				<div class="grid-product">
-					{% render 'product-item' product: product %}
+<div class="page-width">
+	{% paginate collection.products by section.settings.pagination %}
+			<h1>{{ collection.title }}</h1>
+			
+				<div class="grid-collection">
+					{% for product in collection.products %}
+					<div class="grid-product">
+						{% render 'product-item' product: product %}
+					</div>
+					{% else %}
+					<p>no matches</p>
+					{% endfor %}
 				</div>
-				{% else %}
-				<p>no matches</p>
-				{% endfor %}
-			</div>
-		</div>
-		
-
-    
-    {% if paginate.pages > 1 %}
-        {{ paginate | default_pagination }}
-    {% endif %}
-{% endpaginate %}
+			
+			{% if paginate.pages > 1 %}
+					{{ paginate | default_pagination }}
+			{% endif %}
+	{% endpaginate %}
+</div>
 
 {% schema %}
 	{
