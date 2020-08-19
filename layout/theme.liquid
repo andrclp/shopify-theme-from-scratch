@@ -7,7 +7,10 @@
   <meta name="description" content="{{ page_description | escape }}">
   <link rel="canonical" href="{{ canonical_url }}">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-  {{ content_for_header }} <!-- Header hook for plugins -->
+	{{ content_for_header }} <!-- Header hook for plugins -->
+	
+
+	{{ '//stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css' | stylesheet_tag }}
 	{{ 'theme.scss.css' | asset_url | stylesheet_tag }}
 	
 
