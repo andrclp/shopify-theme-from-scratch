@@ -15,7 +15,14 @@
         "id": "links-color",
         "label": "Link color",
         "default": "#B05858",
-        "info": "change color for all website links"
+        "info": "links color"
+			},
+			{
+        "type": "color",
+        "id": "border-color",
+        "label": "Border color",
+        "default": "#B85341",
+        "info": "border color"
       }
     ]
   }
