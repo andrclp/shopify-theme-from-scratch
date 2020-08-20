@@ -2,6 +2,13 @@
 	<div class="page-width">
 
 		<div class="header--logo">
+
+			{%- if template.name == 'index' -%}
+				<h1 itemscope itemtype="http://schema.org/Organization">
+			{%- else -%}
+				<div itemscope itemtype="http://schema.org/Organization">
+			{%- endif -%}
+			
 			<a href="{{ routes.root_url }}" class="site-header__logo-image">
 				{% capture logo_alt %}{{ section.settings.header_logo.alt | default: shop.name }}{% endcapture %}
 				<img class="lazyload js"
@@ -20,6 +27,13 @@
 							 style="max-width: {{ section.settings.logo_max_width }}px;">
 				</noscript>
 			</a>
+			
+			{%- if template.name == 'index' -%}
+				</h1>
+			{%- else -%}
+				</div>
+			{%- endif -%}
+			
 		</div>
 
 		<div class="header--nav">
