@@ -1,37 +1,87 @@
-{% for link in linklists.main-menu.links %}
-	{% assign child_list_handle = link.title | handleize %}
-	{% if linklists[child_list_handle].links != blank %}
-		<a href="{{ link.url }}">{{ link.title }}</a>
-		[{% for childlink in linklists[child_list_handle].links %}
-			<a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
-		{% endfor %}]
-	{% else %}
-		<a href="{{ link.url }}">{{ link.title }}</a>
-	{% endif %}
-{% endfor %}
+<header class="header">
+	<div class="page-width">
 
+		<div class="header--logo">
+			<a href="{{ routes.root_url }}" class="site-header__logo-image">
+				{% capture logo_alt %}{{ section.settings.header_logo.alt | default: shop.name }}{% endcapture %}
+				<img class="lazyload js"
+						 src="{{ section.settings.header_logo | img_url: '300x300' }}"
+						 data-src="{{ img_url }}"
+						 data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+						 data-aspectratio="{{ section.settings.header_logo.aspect_ratio }}"
+						 data-sizes="auto"
+						 alt="{{ logo_alt | escape }}"
+						 style="max-width: {{ section.settings.logo_max_width }}px">
+				<noscript>
+					{% capture image_size %}{{ section.settings.logo_max_width | escape }}x{% endcapture %}
+					<img src="{{ section.settings.header_logo | img_url: image_size }}"
+							 srcset="{{ section.settings.header_logo | img_url: image_size }} 1x, {{ section.settings.header_logo | img_url: image_size, scale: 2 }} 2x"
+							 alt="{{ section.settings.header_logo.alt | default: shop.name }}"
+							 style="max-width: {{ section.settings.logo_max_width }}px;">
+				</noscript>
+			</a>
+		</div>
 
-<a href="/cart">
-	cart
-	(<span class="cart-item-count"></span>)
-</a>
-
-
-{% if shop.customer_accounts_enabled %}
-	{% if customer %}
-		<a href="/account">account</a>
-		{{ 'log out'  | customer_logout_link }}
-	{% else %}
-		{{ 'log in ' | customer_login_link }}
-		{{ 'register' | customer_register_link }}
-	{% endif %}
-{% endif %}
+		<div class="header--nav">
+			<div class="nav">
+				{% for link in linklists.main-menu.links %}
+					{% assign child_list_handle = link.title | handleize %}
+					{% if linklists[child_list_handle].links != blank %}
+						<a href="{{ link.url }}">{{ link.title }}</a>
+						[{% for childlink in linklists[child_list_handle].links %}
+							<a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
+						{% endfor %}]
+					{% else %}
+						<a href="{{ link.url }}">{{ link.title }}</a>
+					{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+	
+		<div class="header--cart">
+			<a href="/cart">
+				cart
+				(<span class="cart-item-count"></span>)
+			</a>
+		</div>
+	
+		<div class="header--customer-login">
+			{% if shop.customer_accounts_enabled %}
+				{% if customer %}
+					<a href="/account">account</a>
+					{{ 'log out'  | customer_logout_link }}
+				{% else %}
+					{{ 'log in ' | customer_login_link }}
+					{{ 'register' | customer_register_link }}
+				{% endif %}
+			{% endif %}
+		</div>
+	</div>
+</header>
 
 {% schema %}
 	{
 		"name": "Header",
 		"settings": [
-			
+			{
+				"type": "image_picker",
+				"id": "header_logo",
+				"label": {
+					"en": "Logo image"
+				}
+			},
+			{
+				"type": "range",
+				"id": "logo_max_width",
+				"label": {
+					"en": "Custom logo width"
+				},
+				"min": 50,
+				"max": 250,
+				"step": 5,
+				"unit": "px",
+				"default": 100
+			}
 		]
 	}
 {% endschema %}
