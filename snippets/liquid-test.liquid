@@ -1,0 +1,98 @@
+<!-- string concatenation -->
+{%- assign firstName = 'Andrei' -%}
+{%- assign lastName = 'Clep' -%}
+
+{%- capture full_name -%}
+	{{ firstName }} {{ lastName }}
+{%- endcapture -%}
+
+<div>
+	{{- full_name -}}
+</div>
+
+
+
+<!-- Substrings - convert youtube url into a youtube embed url -->
+{%- assign youtube_video_url = 'https://www.youtube.com/watch?v=J6Su5Vx3x5U' -%}
+{%- if youtube_video_url contains 'youtube.com/watch' -%}
+	{%- assign video_parts = youtube_video_url | split: 'v=' -%}
+	{%- if youtube_video_url contains '&' -%}
+		{%- assign video_id = video_parts[1] | split: '&' | first -%}
+	{%- else -%}
+		{%- assign video_id = video_parts[1] -%}
+	{%- endif -%}
+	<iframe src="//www.youtube.com/embed/{{ video_id }}?rel=0&amp;showinfo=0&amp;vq=720" width="850" height="480" frameborder="0" allowfullscreen=""></iframe>
+{%- endif -%}
+
+
+<!-- Creating Arrays of "Objects" -->
+<!-- Shopify liquid does not allow for making Objects, neigher can you create arrays of objects.
+You can however make arrays of strings and numbers as well as arrays of arrays using capture and split. -->
+{%- comment -%}
+{%- assign collection = collections['all'] -%}
+
+{%- capture products_list -%}
+	{%- for product in collection.products -%}
+		{{ product.title }} | 
+		{{ product.url }} | 
+		{{ product.description }} | 
+		{{ product.featured_image.src | product_img_url: 'medium' | img_tag }}
+		{% if forloop.last == false %}::{% endif %}
+	{%- endfor -%}
+{%- endcapture -%}
+
+{%- assign products_array = products_list | split: '::' -%}
+
+{%- for product in products_array -%}
+	{%- assign product_vals = product | split: '|' -%}
+	<!-- output -->
+	{{ product_vals[0] }}
+	{{ product_vals[2] }}
+{%- endfor -%}
+{%- endcomment -%}
+
+<br>
+<!-- Creating booleans -->
+{%- assign true_or_false = false -%}
+{%- if 'hello' == 'helllo' -%}
+	{%- assign true_or_false = true -%}
+{%- endif -%}
+
+{%- if true_or_false -%}
+	hello does equal hello
+{%- else -%}
+	hello does not equal
+{%- endif -%}
+
+
+
+<br>
+<!-- Order of Operations -->
+{%- assign average_price = 100 | plus: 50 | minus: 10 | divided_by: 2 -%}
+{{ average_price }}
+
+
+<!-- Dealing with empty drops -->
+{%- assign page = pages['does-not-exist'] -%}
+{{ page }} <!-- empty drop -->
+
+{%- if page.title != blank -%}
+	<h2>Page title is {{ page.title }}</h2>
+{%- endif -%}
+
+{%- if page.title != empty -%}
+	<h2>Page title is {{ page.title }}</h2>
+{%- endif -%}
+
+{%- unless page.empty -%}
+	<h2>Page title is {{ page.title }}</h2>
+{%- endunless -%}
+
+<!-- exception: the customer object -->
+{%- if customer -%}
+	<h2>hi customer</h2>
+{%- else -%}
+	<h2>not logged in</h2>
+{%- endif -%}
+
+
