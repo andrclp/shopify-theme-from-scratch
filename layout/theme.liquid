@@ -19,7 +19,7 @@
   {{ 'lazysizes.js' | asset_url | script_tag }}
   {{ 'theme.js' | asset_url | script_tag }}
 </head>
-<body>
+<body class="template-{{ template | split: '.' | first }}">
 
 	{% section 'header' %}
 
