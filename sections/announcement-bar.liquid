@@ -1,18 +1,3 @@
-<style>
-	.announcement-bar {
-		padding: {{ section.settings.announcement_padding }}px 0;
-		background-color: {{ section.settings.announcement_bar_color }};
-    text-align: center;
-    text-decoration: none;
-  }
-  .announcement-bar__message {
-    font-size: large;
-		color: {{ section.settings.announcement_bar_text_color }};
-		margin-bottom: 0;
-  }
-  
-</style>  
-
 {%- if section.settings.show_announcement -%}
   {%- if section.settings.home_page_only == false or template.name == 'index' -%}
 
@@ -34,6 +19,7 @@
 
   {%- endif -%}
 {%- endif -%}
+
 
 {% schema %}
 {
@@ -87,3 +73,18 @@
   ]
 }
 {% endschema %}
+
+{% style %}
+	.announcement-bar {
+		padding: {{ section.settings.announcement_padding }}px 0;
+		background-color: {{ section.settings.announcement_bar_color }};
+    text-align: center;
+    text-decoration: none;
+  }
+	.announcement-bar__message {
+		font-size: large;
+		color: {{ section.settings.announcement_bar_text_color }};
+		margin-bottom: 0;
+	}
+  
+{% endstyle %}
