@@ -1,0 +1,89 @@
+<style>
+	.announcement-bar {
+		padding: {{ section.settings.announcement_padding }}px 0;
+		background-color: {{ section.settings.announcement_bar_color }};
+    text-align: center;
+    text-decoration: none;
+  }
+  .announcement-bar__message {
+    font-size: large;
+		color: {{ section.settings.announcement_bar_text_color }};
+		margin-bottom: 0;
+  }
+  
+</style>  
+
+{%- if section.settings.show_announcement -%}
+  {%- if section.settings.home_page_only == false or template.name == 'index' -%}
+
+    {%- if section.settings.link == blank -%}
+      <div class="announcement-bar">
+		{%- else -%}
+		<div class="announcement-bar">
+      <a href="{{ section.settings.link }}" >
+    {%- endif -%}
+
+        <p class="announcement-bar__message">{{ section.settings.text | escape }}</p>
+
+    {%- if section.settings.link == blank -%}
+      </div>
+    {%- else -%}
+			</a>
+		</div>
+    {%- endif -%}
+
+  {%- endif -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_announcement",
+      "label": "Show announcement",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "home_page_only",
+      "label": "Home page only",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "announcement_bar_color",
+      "label": "Background color",
+      "default": "#000000"
+    },
+	{
+      "type": "color",
+      "id": "announcement_bar_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+		},
+		{
+			"type":   "range",
+			"id":     "announcement_padding",
+			"min":       4,
+			"max":       12,
+			"step":      2,
+			"unit":      "px",
+			"label":     "Padding",
+			"default":   4
+		},
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Announcement text",
+      "default": "Announce something here"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Announcement link"
+    }
+  ]
+}
+{% endschema %}
