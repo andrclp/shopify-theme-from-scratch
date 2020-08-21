@@ -10,7 +10,8 @@
 	{{ content_for_header }} <!-- Header hook for plugins -->
 	
 
-	{{ '//stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css' | stylesheet_tag }}
+	<!-- {{ '//stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css' | stylesheet_tag }} -->
+	{{ '//raw.githubusercontent.com/andrclp/css-grid-framework/gh-pages/grid.css' | stylesheet_tag }}
 	{{ 'theme.scss.css' | asset_url | stylesheet_tag }}
 	
 
