@@ -14,12 +14,6 @@
 	<!-- load css files -->
 	{{ 'grid.scss.css' | asset_url | stylesheet_tag }}
 	{{ 'theme.scss.css' | asset_url | stylesheet_tag }}
-	
-	<!-- load script files -->
-	{{ '//code.jquery.com/jquery-3.5.1.min.js' | script_tag }}
-  {{ 'lazysizes.js' | asset_url | script_tag }}
-	{{ 'theme.js' | asset_url | script_tag }}
-	
 </head>
 <body class="template-{{ template | split: '.' | first }}">
 
@@ -31,6 +25,11 @@
   </main>
 
 	{% section 'footer' %}
+
+	<!-- load script files -->
+	{{ '//code.jquery.com/jquery-3.5.1.min.js' | script_tag }}
+	{{ 'lazysizes.js' | asset_url | script_tag }}
+	{{ 'theme.js' | asset_url | script_tag }}
 
 </body>
 </html>
