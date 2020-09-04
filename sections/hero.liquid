@@ -1,5 +1,5 @@
-<div id="hero" class="jumbotron jumbotron-fluid jumbotron-cover" style="background-image: url({{ section.settings.image | img_url: 'master'}});">
-  <div class="page-width container text-center py-5">
+<div class="hero d-flex align-items-center" style="background-image: url({{ section.settings.image | img_url: 'master'}});">
+  <div class="container text-center">
     <h1 class="hero-title display-3 mb-5">{{ section.settings.title | escape }}</h1>
     <a href="{{ section.settings.href }}" class="btn btn-primary btn-lg">{{ section.settings.label | escape }}</a>
   </div>
@@ -55,18 +55,14 @@
 {% endschema %}
 
 {% style %}
-	#hero {
-		display: flex;
-		align-items: center;
-	}
-
-	h1.hero-title {
-		color: {{ section.settings.title_color }};
-	}
-
-	.jumbotron-cover {
+	.hero {
   	background-size: cover;
   	background-position: center center;
 		height: {{ section.settings.image_height }}px;
 	}
+	
+	.hero .hero-title {
+		color: {{ section.settings.title_color }};
+	}
+
 {% endstyle %}
