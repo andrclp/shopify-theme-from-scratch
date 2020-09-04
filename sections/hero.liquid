@@ -1,7 +1,11 @@
 <div class="hero d-flex align-items-center" style="background-image: url({{ section.settings.image | img_url: 'master'}});">
   <div class="container text-center">
-    <h1 class="hero-title display-3 mb-5">{{ section.settings.title | escape }}</h1>
-    <a href="{{ section.settings.href }}" class="btn btn-primary btn-lg">{{ section.settings.label | escape }}</a>
+    <h1 class="hero-title display-3 mb-5">
+			{{ section.settings.title | escape }}
+		</h1>
+    <a class="btn btn-primary btn-lg" href="{{ section.settings.href }}">
+			{{ section.settings.label | escape }}
+		</a>
   </div>
 </div>
 
@@ -60,7 +64,7 @@
   	background-position: center center;
 		height: {{ section.settings.image_height }}px;
 	}
-	
+
 	.hero .hero-title {
 		color: {{ section.settings.title_color }};
 	}
