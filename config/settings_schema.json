@@ -11,28 +11,28 @@
     "name": "General styles",
     "settings": [
       {
-        "type":    "color",
-        "id":      "links-color",
-        "label":   "Link color",
+        "type": "color",
+        "id": "links-color",
+        "label": "Link color",
         "default": "#B05858",
-        "info":    "links color"
-			},
-			{
-        "type":    "color",
-        "id":      "border-color",
-        "label":   "Border color",
+        "info": "links color"
+      },
+      {
+        "type": "color",
+        "id": "border-color",
+        "label": "Border color",
         "default": "#B85341",
-        "info":    "border color"
-			},
-			{
-				"type":    "range",
-				"id":      "website-width",
-				"min":      900,
-				"max":      1600,
-				"step":     20,
-				"label":    "Website width",
-				"default":  1100
-			}		
+        "info": "border color"
+      },
+      {
+        "type": "range",
+        "id": "website-width",
+        "min": 900,
+        "max": 1600,
+        "step": 20,
+        "label": "Website width",
+        "default": 1100
+      }
     ]
   }
 ]

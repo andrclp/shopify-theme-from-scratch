@@ -1,6 +1,8 @@
 {
   "current": {
     "links-color": "#b12222",
+    "border-color": "#dec6c6",
+    "website-width": 1100,
     "checkout_header_image": "",
     "checkout_logo_image": "",
     "checkout_logo_position": "left",
@@ -18,7 +20,10 @@
     "sections": {
       "header": {
         "type": "header",
-        "settings": {}
+        "settings": {
+          "header_logo": "shopify:\/\/shop_images\/logo.png",
+          "logo_max_width": 130
+        }
       },
       "footer": {
         "type": "footer",
@@ -45,6 +50,12 @@
               "image": "shopify:\/\/shop_images\/woman-relaxed-work.jpg"
             }
           },
+          "1597768999346": {
+            "type": "video",
+            "settings": {
+              "video_url": "https:\/\/vimeo.com\/279117234"
+            }
+          },
           "1597764132051": {
             "type": "image",
             "settings": {
@@ -62,12 +73,6 @@
             "settings": {
               "video_url": ""
             }
-          },
-          "1597768999346": {
-            "type": "video",
-            "settings": {
-              "video_url": "https:\/\/vimeo.com\/279117234"
-            }
           }
         },
         "block_order": [
@@ -81,11 +86,102 @@
         ],
         "settings": {
           "per_row": "49.5%",
-          "image_height": 470
+          "image_height": 350
+        }
+      },
+      "collection-template": {
+        "type": "collection-template",
+        "settings": {
+          "pagination": 4
+        }
+      },
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "show_announcement": true,
+          "home_page_only": false,
+          "announcement_bar_color": "#ca592e",
+          "announcement_bar_text_color": "#ffffff",
+          "announcement_padding": 4,
+          "text": "Announce something here",
+          "link": ""
+        }
+      },
+      "1597952351956": {
+        "type": "featured-collection",
+        "settings": {
+          "featured_collection_picker": "featured-collection"
+        }
+      },
+      "1597952724077": {
+        "type": "call-to-action",
+        "settings": {
+          "text-box": "Title",
+          "link": "",
+          "linktext": "Click here"
+        }
+      },
+      "1598378881870": {
+        "type": "hero",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/small-business-interior.jpg",
+          "image_height": 460,
+          "title": "SALE NOW OPEN",
+          "title_color": "#000000",
+          "label": "SHOP NOW",
+          "href": "\/collections\/all"
+        }
+      },
+      "1599238495237": {
+        "type": "logo-list",
+        "blocks": {
+          "1599238495237-0": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/patchouli.png",
+              "link": ""
+            }
+          },
+          "1599238495237-1": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/patchouli.png",
+              "link": ""
+            }
+          },
+          "1599238495237-2": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/patchouli.png",
+              "link": ""
+            }
+          },
+          "1599238495237-3": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/patchouli.png",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "1599238495237-0",
+          "1599238495237-1",
+          "1599238495237-2",
+          "1599238495237-3"
+        ],
+        "settings": {
+          "title": "Logo list",
+          "logo_width": "125px"
         }
       }
     },
-    "content_for_index": []
+    "content_for_index": [
+      "1598378881870",
+      "1599238495237",
+      "1597952351956",
+      "1597952724077"
+    ]
   },
   "presets": {
     "Default": {}
