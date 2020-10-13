@@ -64,10 +64,12 @@
 
 		<div class="header--icons col-6 col-sm-3">
 			<div class="header-cart">
-				<a href="/cart">
+				<!-- <a href="/cart">
 					{% include 'icon-cart' %}
 					<span class="cart-item-count"></span>
-				</a>
+				</a> -->
+
+				{% render 'goCart-button' %}
 			</div>
 	
 			<div class="header-customer-login">

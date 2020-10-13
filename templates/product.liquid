@@ -19,7 +19,8 @@
 	<h1>{{ product.title }}</h1>
 
 	<!-- product form -->
-	<form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
+	<form action="/cart/add" method="post" enctype="multipart/form-data"  
+  id="add-to-cart-{{ product.handle }}-{{ collection.handle }}-{{ section.id }}">
 		<select name="id" id="productSelect">
 			{% for variant in product.variants %}
 			{% if variant.available %}
@@ -39,7 +40,7 @@
 
 		<button type="submit" name="add" {% unless current_variant.available %} aria-disabled="true" {% endunless %}
 			aria-label="{% unless current_variant.available %}{{ 'products.product.sold_out' | t }}{% else %}{{ 'products.product.add_to_cart' | t }}{% endunless %}"
-			class="btn btn-primary product-form__cart-submit{% if section.settings.enable_payment_button %} btn--secondary-accent{% endif %}"
+			class="btn btn-primary js-go-cart-add-to-cart product-form__cart-submit{% if section.settings.enable_payment_button %} btn--secondary-accent{% endif %}"
 			data-add-to-cart>
 			<span data-add-to-cart-text>
 				{% unless current_variant.available %}

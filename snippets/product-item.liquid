@@ -12,7 +12,8 @@
 
 <span>{{ product.price | money }}</span>
 
-<form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
+<form action="/cart/add" method="post" enctype="multipart/form-data"  
+  id="add-to-cart-{{ product.handle }}-{{ collection.handle }}-{{ section.id }}">
   {{ current_variant.price | money }}
   <label for="Quantity">quantity</label>
 	<input type="number" id="Quantity" name="quantity" value="1" min="1">
@@ -23,6 +24,6 @@
 		value="{% if product.variants.first.available%}Add to Cart{% else %}Sold Out{% endif%}"
 		{% unless product.variants.first.available %}disabled{% endunless %} 
 		id="AddToCart"
-		class="btn btn-primary" 
+		class="btn btn-primary js-go-cart-add-to-cart" 
 	/>
 </form>
